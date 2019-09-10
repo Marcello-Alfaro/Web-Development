@@ -1,0 +1,40 @@
+h1 {
+  font-style: italic;
+  font-variant: small-caps;
+  text-indent: 40px;
+  word-spacing: 5px;
+  letter-spacing: 5px;
+}
+
+/* The body isn't as big as the viewport itself
+The width is as big as the viewport but the height is not! */
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* background: darkblue;
+  background-image: url('landscape.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* This will make it so tha the image is sized
+  based off the size of your viewport and not the size of
+  the container default value is scroll, which means 
+  if you had a lot of contect when you scroll down the image
+  would scroll down so you wouldn't see it anymore,
+  with fixed the image will always be in place */
+  /*  background-attachment: fixed; */
+
+  /* This will mean tha a little bit on both sides will get cut
+  off same thing with top and the botton preserves most of the image */
+  /*  background-position: center center; */
+}
+
+body {
+  /* Firt position then size everthing else can go anywhere */
+  background: fixed center bottom / cover url('landscape.jpg') no-repeat;
+}
+
+h1 {
+  /* Using shorthands if not specify the attributes css will set them
+  default, can work if put them after the shorthand */
+  font: 800 82px 'Montserrat', sans-serif;
+}

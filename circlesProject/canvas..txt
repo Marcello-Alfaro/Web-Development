@@ -1,0 +1,8 @@
+
+ canvas html element acts like
+ a place to do animations and graphics,
+ can be used to draw graphics via scripting in javascript.
+ example: can be used to draw graphs, make photo compositions,
+ create animations, or even do real-time video processing
+ rendering.
+

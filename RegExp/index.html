@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="shortcut icon"
+      href="assets/css/img/hashtag.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/css/regEx.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Taller RegExp</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>/ RegExp /</h1>
+
+      <div id="stripe">
+        <button class="mode selected" id="modeHash">Hashtag</button>
+        <button class="mode">Variable</button>
+        <button class="mode">Contraseña</button>
+      </div>
+
+      <div class="section" id="display1">
+        <label for="punto1">Validador de hashtag</label>
+        <input type="text" id="hash" placeholder="Digite el hashtag" />
+
+        <input type="button" id="verificarHash" value="verificar" />
+      </div>
+
+      <div class="section" id="display2">
+        <label for="punto2">Validador de variables</label>
+        <input
+          type="text"
+          id="variable"
+          placeholder="Digite el nombre de la variable"
+        />
+
+        <input type="button" id="verificarVar" value="verificar" />
+      </div>
+
+      <div class="section" id="display3">
+        <label for="punto3">Validador de Contraseña</label>
+        <input type="text" id="contraseña" placeholder="Digite la contraseña" />
+
+        <input type="button" id="verificarContr" value="verificar" />
+      </div>
+
+      <div class="verificar">
+        <h1></h1>
+      </div>
+    </div>
+    <script src="assets/js/regEx.js"></script>
+  </body>
+</html>

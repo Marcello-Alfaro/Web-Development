@@ -1,0 +1,26 @@
+Key Questions
+-What's is jQuery?
+It is the most popular tool for javascript, popular javascript library
+to manipulate de DOM
+
+-What's is a library?
+Take code that someone else coded and added to our own project, which contains
+methods, properties that we can add and use on our projects
+
+-Why would you sue jQuery?
+    -Select elements
+    -Manipulate Elements
+    -Create elements
+    -Add event listeners
+    -Animate Elements
+    -Add Effects
+    -Make HTTP Requests(AJAX)
+
+-Why would you not use jQuery?
+    -Fixes "Broken" DOM API
+    -Brevity and Clarity
+    -Ease of use
+    -Cross-Browser Support
+    -AJAX
+
+Either way, it's worth knowing.

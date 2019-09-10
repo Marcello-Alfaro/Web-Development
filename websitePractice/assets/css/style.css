@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ecf0f1;
+  margin: 0;
+}
+
+.container {
+  width: 780px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0px 9px 13px 5px;
+}
+
+.header {
+  padding: 40px 0 40px 40px;
+  text-align: center;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #33bb77;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.menu {
+  background: #33bb77;
+  padding: 6px 0 6px 50px;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  color: #ecf2f3;
+}
+
+#home-image img {
+  width: 100%;
+}
+
+aside {
+  float: left;
+  width: 120px;
+  /* padding: top right button left */
+  padding: 40px 0 0 40px;
+}
+
+h1 {
+  margin: 0px;
+  color: #869843;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+h2 {
+  color: #3b7687;
+  font-size: 15px;
+  margin: 20px 0 5px 0;
+}
+
+.main {
+  margin: 0 0 0 180px;
+  padding: 35px 40px 30px 0;
+  color: #444444;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 8px 0;
+  background: #33bb77;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer a .separator {
+  color: #fff;
+  font-size: 23px;
+}
+
+/* About page styles */
+
+#about-page #home-image img {
+  width: 70%;
+  float: left;
+  margin-bottom: 15px;
+}
+
+#about-page #profile-info {
+  float: right;
+  width: 20%;
+  margin: 5px;
+}
+
+#about-page .description {
+  clear: both;
+}
+
+#contact-page #form {
+  width: 500px;
+  padding: 10px;
+  margin: 0 auto;
+  box-shadow: 0px 9px 13px 5px;
+  border-radius: 5px;
+}
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#contact-page #form input {
+  width: 100%;
+  height: 20px;
+}
+
+#contact-page #form #message {
+  width: 100%;
+}
+
+#contact-page #form input[type='submit'] {
+  width: 100%;
+  height: 25px;
+}

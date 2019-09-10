@@ -1,0 +1,19 @@
+JavaScript is an interpreted language not a complied language.
+JavaScript is interpreted at runtime by client browser.
+browser passes JavaScript code through speceial program called interpreter.
+
+The computer does not understand JavaScript at all so uses and an interpreter
+that converts the JavaScript code into machine code. it works as a translator
+
+JavaScript was called liveScript
+
+What can JavaScript do for you?
+*Interacting with users -- Getting information and validating their actions-
+*Change HTML content, HTML style and HTML attribute
+*detects browser
+*validate date
+*Perform calculations
+*validate form inputs
+*Interact with multiple frames
+*And much more...
+

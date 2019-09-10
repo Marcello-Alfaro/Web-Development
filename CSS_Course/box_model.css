@@ -1,0 +1,121 @@
+/* 
+-The contect size will adjust automatically according to
+the text that's inside it.
+    you can alter the default size of the contect box
+    by using the height and width properties.
+
+
+-Padding makes and element bigger.
+    Padding ca be applied to the top, botton, left of right
+    sides of an element
+
+-Borders add a border around your element.
+    As the model indicates, the border is applied
+    outside of the padding.
+    Like padding, you can specify a border for the
+    top, botton, left and right sides of the element.
+
+-Margin is like an elements "personal space".
+    Margin will prevent other elements
+    from getting to close to itself.
+    Like padding and border, it can be
+    applied to the top, botton, left or
+    right sides of an element
+
+*/
+
+/* Padding */
+h1 {
+  /* background: blue;
+  color: white; */
+
+  padding: 40px;
+  /* top-botton left-right */
+  padding: 40px 0;
+  /* 4 values trick use clockwise means firt is
+  top - right - botton - left TRBL - Trouble */
+
+  /* Set top left-right bottom */
+  padding: 48px 0 18px;
+}
+
+/* Border */
+h1 {
+  padding: 28px;
+  /* Border is going to be place outside the padding */
+  /* The border color will change if a color property exits */
+  /*  color: red;
+  border: 8px solid;
+
+  border: 8px double darkblue;
+  border-style: groove;
+  border-width: 8px;
+  border-color: darkblue;
+
+  border-bottom: 4px solid;
+
+  border-radius: 4px;
+  border-top-left-radius: 20px; */
+  /* Start at top-left top-right bottom-right bottom-left  */
+}
+
+/* Width and Height */
+
+h1,
+h2 {
+  /* background: purple;
+  color: white;
+ */
+  /* height: 200px; */
+  /* The min-height just say that the height can never get smaller
+  than th min-height same situation with the max-height */
+  /* min-height: 120px;
+  max-width: 500px; */
+
+  /* This means the width is as big as it needs to be */
+  width: max-content;
+}
+
+/* Types of display block and inline-block 
+
+block elements always start on a new line no matter what,
+block elements take up the full size of their container,
+not the full side of the body.
+
+inline elements dont start on a new line and their width is not
+as big as the containers box they're just as big as they need to be.
+inline elements arent affected by the height and width properties
+margin top, right, left will apply but not botton.
+
+But yo can apply margin bottom to an inline element, the DISPLAY
+property is set to inline-block
+
+inline-block is basically an inline element with almost no 
+difference, the difference is that it will respect all of 
+your css rule or all your style rules.
+*/
+
+/* Margin */
+/* margin is placed outside of the border, is an
+elements personal space which is just doesn't let
+other elements get that close to it */
+
+h1 {
+  background: blue;
+  padding: 12px;
+  color: white;
+  border: 8px solid darkblue;
+  /* margin -px to overlap */
+}
+
+/* Margin 0 sets the margin to be auto on the right
+to make sure the element taks up the whole size of
+the container cuz its a block element */
+/* The smaller margin is not counted. */
+
+/* Padding does not overlaps as margin */
+
+/* Box sizing */
+/* content-box is the default , border-box helps a 
+element to take the exact width that was giving 
+incluiding padding  */

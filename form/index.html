@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="assets/img/car.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>CaribeDrive</title>
+  </head>
+  <body>
+    <div class="section">
+      <div class="main">
+        <div id="form-content">
+          <div class="header">
+            <h1><a href="index.html">CaribeDrive</a></h1>
+          </div>
+          <h3>Formulario de Alquier</h3>
+          <form method="POST" action="respond.php">
+            <p>
+              <label for="cedula">Cedula<span class="required">*</span></label>
+              <input
+                type="text"
+                name="cedula"
+                id="cedula"
+                placeholder="Digite su cedula"
+              />
+            </p>
+
+            <p>
+              <label for="lugarEx"
+                >Lugar de expedición<span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                name="lugarEx"
+                id="lugarEx"
+                placeholder="Digite lugar de expedicion de su cedula"
+              />
+            </p>
+
+            <p>
+              <label for="nombre">Nombres<span class="required">*</span></label>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                placeholder="Digite sus nombres"
+              />
+            </p>
+
+            <p>
+              <label for="apellido"
+                >Apellidos<span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                name="apellidos"
+                id="apellidos"
+                placeholder="Digite sus apellidos"
+              />
+            </p>
+
+            <p>
+              <label for="tipoAuto"
+                >Tipo de auto<span class="required">*</span>
+              </label>
+              <select name="tipoAuto" id="tipoAuto">
+                <option value="Autos Grandes"
+                  >Autos Grandes -- $400.000/dia</option
+                >
+                <option value="Camionetas">Camionetas -- $350.000/dia</option>
+                <option value="Autos Medianos"
+                  >Autos Medianos -- $200.000/dia</option
+                >
+                <option value="Autos Economicos"
+                  >Autos Economicos -- $150.000/dia</option
+                >
+              </select>
+            </p>
+
+            <p>
+              <label for="numDias"
+                >Numero dia alquiler<span class="required">*</span></label
+              >
+              <input type="number" id="numDias" value="5" />
+            </p>
+
+            <p>
+              <label for="fechaLlegada"
+                >Fecha de llegada<span class="required">*</span>
+              </label>
+              <input type="date" name="fechaLlegada" id="fechaLlegada" />
+            </p>
+
+            <p>
+              <label for="horaLlegada"
+                >Hora de llegada<span class="required">*</span>
+              </label>
+              <input type="time" name="horaLlegada" id="horaLlegada" />
+            </p>
+
+            <input type="checkbox" />
+            <label for="coberturea">Cobertura por daño y robo</label>
+            &nbsp; &nbsp; &nbsp;
+            <input type="checkbox" />
+            <label for="isCosteño"
+              >Es usted Costeño<span class="required">*</span>
+            </label>
+
+            <p>
+              <input type="checkbox" />
+              <label for="condiciones"
+                >Acepto Terminos y Condiciones<span class="required"
+                  >*</span
+                ></label
+              >
+            </p>
+
+            <input type="submit" value="Enviar" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="layer"></div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

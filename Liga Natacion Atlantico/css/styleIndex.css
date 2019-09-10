@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25/01/2019, 03:27:55 PM
+    Author     : Marcello
+*/
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva,
+      Verdana, sans-serif;
+}
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.video-content{
+    z-index: 1;
+    text-align: center;
+}
+.video-content h1 {
+  text-align: center;
+  font-size: 6rem;
+  padding: 20px;
+  margin: 15px;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.video-content p{
+    text-align: center;
+    font-size: 1.5rem;
+    display: block;
+    padding-bottom: 2rem;
+}
+
+.video-content .btn{
+    border-radius: 30px;
+    background: lightblue;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.video-content img{
+    width: 50%;
+}
+
+.video-content .btn:hover{
+    border-color: lightblue;
+    border-width: 4px;
+    background: transparent;
+    box-shadow: 0 0 10px lightblue;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.3;
+}
+

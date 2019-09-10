@@ -1,0 +1,10 @@
+h1,
+h2 {
+  cursor: pointer;
+}
+
+/* pseudo selector */
+h1:hover {
+  opacity: 0.4;
+  color: blueviolet;
+}

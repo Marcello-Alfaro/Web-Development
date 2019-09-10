@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #232323;
+  font-family: 'Inconsolata';
+  color: #ecf0f1;
+}
+
+div#stripe {
+  background: white;
+  height: 30px;
+  text-align: center;
+}
+
+div.main {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.main h1 {
+  text-align: center;
+}
+
+div.section {
+  margin: 50px 0;
+  display: none;
+}
+
+div.main label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0;
+  width: 300px;
+  text-align: center;
+  background: #e74c3c;
+  text-transform: capitalize;
+}
+
+input {
+  font-family: inherit;
+  transition: 0.2s;
+}
+
+input[type='text'] {
+  width: 300px;
+  padding: 12px 15px;
+  border: 2px solid #ecf0f1;
+  background: #ecf0f1;
+  border-radius: 0 0 8px 8px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 150px;
+  margin-bottom: 10px;
+}
+
+input[type='text']::placeholder {
+  color: #232323;
+  background: #ecf0f1;
+  font-weight: 700;
+}
+
+input[type='text']:focus {
+  outline: none;
+  border: 2px solid #e74c3c;
+  color: #232323;
+  font-weight: 700;
+}
+
+input[type='button'] {
+  background: #ecf0f1;
+  width: 100px;
+  border: 2px solid #e74c3c;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+input[type='button']:hover {
+  background: #e74c3c;
+  color: #ecf0f1;
+}
+
+button {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  background: none;
+  height: 100%;
+  margin: 0 50px;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+div#stripe button:hover {
+  background: #232323;
+  color: #ecf0f1;
+}
+
+.selected {
+  color: #ecf0f1;
+  background: #232323;
+}
+
+div.verificar h1 {
+  font-size: 50px;
+}

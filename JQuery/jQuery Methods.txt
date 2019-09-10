@@ -1,0 +1,127 @@
+
+    Methods
+    -Val(): Get the current value of the first element in the set of matched elements
+    or set the value of every matched element.
+
+    -text(): Changes the inner text only, tags won't work here.
+
+    -attr(): Get the value of an attribute for the first element in the set of matched
+    elements or set one or more attributes for every matched element.
+
+    -html(): Changes the tag structure and text, can write tags here.
+
+    -addClass(): Adds the specified class(es) to each element in the set of matched elements.
+    -removeClass()
+    -toggleclass()
+
+    single attribute acts like a getter
+    Two attributes actas like a setter
+
+
+    ---------- Advanced JQuery -----------
+        Methods
+            -click()
+            -keypress()
+            -on()
+
+    Click()
+    JQuery click() method is a quick and easy
+    way to add a click listener to element(s)
+
+    //prints when item with id "submit" is clicked
+        $("#submit").click(function(){
+            console.log("another click");
+        });
+
+    //prints when any button is clicked
+        $("button").click(function(){
+            console.log("someone clicked a buttond");
+        });
+
+        ------ Example ------
+
+        $("h1")
+jQuery.fn.init [h1, prevObject: jQuery.fn.init(1)]0: h1length: 1prevObject: jQuery.fn.init [document]__proto__: Object(0)
+$("h1").click(function(){
+alert("H1 clicked");
+});
+jQuery.fn.init [h1, prevObject: jQuery.fn.init(1)]
+$("button").click(function(){
+alert("button clicked!")
+})
+jQuery.fn.init(3) [button, button, button, prevObject: jQuery.fn.init(1)]
+$("button").click(function(){
+	$(this).css("background", "pink");
+})
+jQuery.fn.init(3) [button, button, button, prevObject: jQuery.fn.init(1)]
+$("button").click(function(){
+	var buttonText = $(this).text();
+	console.log("you clicked " + buttonText);
+})
+jQuery.fn.init(3) [button, button, button, prevObject: jQuery.fn.init(1)]
+VM629:3 you clicked This is your last warning
+
+
+keypress() 
+JQuery's keypress() method is a quick and easy
+way to add a keypress listener to elements
+
+    //listen for any keypress in any text input
+    $('input[type="text"]').keypress(function(){
+        alert("text input keypress");
+    });
+
+    NOTE!!: keydown and keyup provide a code indicating which
+    key is pressed, while keypress indicates which character was entered.
+
+    $("input").keypress(function(event){
+        if(event.which === 13){
+        alert("you hit enter");
+        }
+        });
+
+------------------------------------------------------------------------------
+on()
+jQuery on() works similarly to addEventListener
+it lets you specify the type of the event to list for.
+
+$("#submit").on("click", function(){
+    console.log("Another click");
+});
+
+$("button").on("click", function(){
+    console.log("button clicked");
+})
+
+Example
+
+for click
+$("h1").on("click", function(){
+	$(this).css("background","orange");
+})
+
+$("button").on("mouseleave", function(){
+	$(this).css("background", "none");
+	console.log("Mouse Enter!!")
+})
+
+$("button").on("mouseleave", function(){
+	$(this).css("background", "none");
+	console.log("Mouse Enter!!")
+})
+
+NOTEE!!!
+
+WHY USE ON()
+In most cases, click() and on("click") will both get the
+job done. HOWEVER, there is one key differencie:
+
+    -click() only adds listeners for existing elements
+    -on() will add listeners for all potential future
+    elements
+
+--------------------------------------------------------------
+
+Effects
+
+.fadeOut()
