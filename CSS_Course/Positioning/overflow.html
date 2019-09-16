@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Overflow</title>
+    <style>
+      body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+
+      /* Overflow */
+
+      /* When the text content is bigger than the height it will
+        the container or the content box will overflow.
+        The text leaks out 
+        default is: overflow: visible;
+        overflow: scroll; will add 2 scrolls bars x and y
+        overflow-y: scroll; only adds 1 scroll bar, vertical.
+        overflow: hidden; will hide the content that leaks and will
+        also fit the text on the content box, does not add scrolls bars
+         */
+
+      p {
+        width: 600px;
+        padding: 18px 32px;
+        border-radius: 8px;
+        border: 1px solid;
+        color: deeppink;
+        line-height: 180%;
+        height: 200px;
+
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nulla quos
+      atque eveniet repudiandae, ipsam quo voluptatum iure nostrum voluptatem
+      facilis aliquid porro, libero accusantium distinctio, aliquam tempore
+      facere dolore! Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      Voluptas neque pariatur dolorum beatae maxime fugit totam vitae suscipit
+      odio molestiae, voluptatibus necessitatibus tempore eveniet qui
+      exercitationem enim porro nam corrupti? Lorem ipsum, dolor sit amet
+      consectetur adipisicing elit. Culpa vel maiores recusandae sunt amet
+      sequi? Ipsam nam porro, iure, quo, expedita repudiandae asperiores animi
+      quis obcaecati libero aperiam est quisquam? Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Aliquid voluptate recusandae saepe porro
+      reiciendis ipsam! Repellendus nobis nulla animi, ex vel, ratione eum cum
+      recusandae quis, aspernatur obcaecati vitae! Tenetur. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Aliquam nesciunt iusto veniam ea
+      voluptas repellendus illum nulla eum voluptatem voluptate itaque expedita
+      ullam animi, numquam facere, necessitatibus inventore voluptatum
+      excepturi? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Eligendi vitae nisi similique repudiandae pariatur consectetur
+      accusantium, nobis, nostrum a incidunt magnam hic laborum in aspernatur,
+      velit ex cupiditate eos nulla. Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Praesentium repudiandae explicabo rem, culpa possimus
+      nam fugiat veritatis? Vitae, ducimus quis! Officia eaque voluptatibus
+      quaerat error ipsum voluptas nulla cupiditate necessitatibus! Lorem ipsum
+      dolor sit amet consectetur, adipisicing elit. Doloremque neque ullam,
+      facere tempore dolor, facilis fugit impedit accusantium nemo unde,
+      obcaecati temporibus ex vero iure itaque laborum error in. Iste.
+    </p>
+  </body>
+</html>
