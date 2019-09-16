@@ -1,0 +1,126 @@
+/* % for font-sizes 
+  default font-size of html is 16px less h tags
+  html tag can be replaced too with :root pseudo */
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 122px;
+}
+
+/* Fixed and Fluid */
+/* Fixed: The element sizes will always be the same,
+    regardless of screen size. They will be fixed in size
+    
+    Fluid: The element sizes will adjust automatically
+    based of the screensize. The elements will be fluid
+    in size. */
+
+/* em 
+When using the em to set the font size 1 value of
+em is iquals to whatever the parentes font size is
+so is going to be 4 times bigger than 18px in this case.
+*/
+
+/* If using for font-size; 1rem equals parents font-size. */
+/* main {
+  width: 60vw;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 3em;
+} */
+
+div {
+  background: white;
+  /* Checks the view height and the view width
+    and whichever is bigger */
+  /* height: 25vmax;
+  width: 25vmax; */
+  font-size: 0.5em;
+}
+
+/* p {
+  font-size: 2em;
+}
+ */
+/* You can set the padding of the button
+based on the font-size instead of of pixels
+
+In this example we have padding in pixels for 
+a design but we can calculate the padding in em
+by the font-size of the button
+like this: 8/22 = 0.36em 44px/22px = 2em;
+this way the button scales appropriately.
+em are really good for padding and margin
+but specially for padding for buttons
+*/
+
+/* button {
+  background-color: transparent;
+  outline: none;
+  font-weight: 400;
+  border: 2px solid;
+  color: blue;
+  border-radius: 500px;
+  margin: 12px;
+  padding: 8px 44px;
+  padding: 0.36em 2em;
+}
+
+.btn-1 {
+  font-size: 22px;
+}
+
+.btn-2 {
+  font-size: 22px;
+} */
+
+/* rems  */
+
+/* They are actually really similar to EMS
+rems only get its value from one place and 
+that is the root and its for root em
+
+1 REM is equal to the root elements font-size*/
+
+html {
+  font-size: 1vw;
+}
+
+h1 {
+  font-size: 5.2rem;
+  margin: 0.1rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0.1rem 0;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+/* The Calc()  function*/
+
+/* Calc() is a real function, you would put inside
+    2 different unit ypes and you would combine them
+    like this */
+body {
+  margin: 0;
+}
+
+:root {
+  font-size: 1vw;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-size: calc(3rem + 10px);
+  font-size: calc(1rem * 3.2);
+}
