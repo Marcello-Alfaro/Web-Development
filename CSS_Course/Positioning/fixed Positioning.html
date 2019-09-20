@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fixed Positioning</title>
+    <style>
+      /* Fixed Positioning */
+      /* Is very similar to absolute positioning
+            the only diference is that its position
+            to the viewport rather that any other element.
+            
+            Also because its posiiton to the viewport it 
+            won't scroll with the rest of your page. 
+            
+            like absolute position elements fixed elements
+            even if its a block element and you want the width to
+            be 100% of its container, you have to explicity set that.
+
+            Also fixed positionig if margin padding properties are not set
+            it will hide the elements below it.
+            */
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+      }
+
+      main {
+        margin-left: 10%;
+        margin-top: 6%;
+        width: 36%;
+      }
+
+      p {
+        margin: 8% 0;
+        line-height: 200%;
+        font-size: 18px;
+      }
+
+      nav {
+        background: #222;
+        color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      ul {
+        padding: 21px 0;
+        margin: 0;
+        margin-left: 10%;
+      }
+
+      ul li {
+        display: inline-block;
+        margin-right: 74px;
+        cursor: default;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Products</li>
+      </ul>
+    </nav>
+
+    <main>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ratione
+        recusandae aut iste officia provident ad explicabo dolor, accusantium
+        sapiente asperiores, consequatur expedita reiciendis magni nam quod.
+        Corporis, incidunt optio?
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ratione
+        recusandae aut iste officia provident ad explicabo dolor, accusantium
+        sapiente asperiores, consequatur expedita reiciendis magni nam quod.
+        Corporis, incidunt optio?
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse ratione
+        recusandae aut iste officia provident ad explicabo dolor, accusantium
+        sapiente asperiores, consequatur expedita reiciendis magni nam quod.
+        Corporis, incidunt optio?
+      </p>
+    </main>
+  </body>
+</html>

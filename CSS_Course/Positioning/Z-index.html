@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Z-index</title>
+    <style>
+      /* Z-INDEX */
+      /* z-index can only be applied to elements that have
+    been positioned so anything other than default static
+    positioning elements. 
+    
+    The z-index is like the stacking order of the elements
+    */
+
+      div {
+        position: fixed;
+        width: 600px;
+        height: 600px;
+      }
+
+      .first {
+        background: blue;
+        bottom: 200px;
+        right: 800px;
+        z-index: 5;
+      }
+
+      .second {
+        background: limegreen;
+        top: 200px;
+        left: 200px;
+        z-index: 1;
+        /* Can set negative values or highers values like this one
+        to make sure the elements is always shown on top */
+        z-index: 9999999;
+      }
+
+      .third {
+        background: deeppink;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div>
+  </body>
+</html>
