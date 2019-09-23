@@ -32,6 +32,8 @@ ul {
   margin-right: 184px !important;
 }
 
+/* Navigation Bar */
+
 #main-navigation ul * {
   display: inline-block;
 }
@@ -59,6 +61,8 @@ ul {
 #main-navigation li a.last-nav {
   border-right: 1px solid rgba(40, 58, 215, 0.1);
 }
+
+/* Landing Section */
 
 #landing-section {
   background-image: url(images/skyline.png);
@@ -99,4 +103,75 @@ ul {
 
 #landing-section button:hover {
   opacity: 0.6;
+}
+
+#info-section {
+  color: #2b39d9;
+}
+
+#info-section h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: calc(0.4rem + 4px);
+  letter-spacing: 1px;
+  opacity: 0.4;
+  margin-top: 10em;
+}
+
+#info-section h2 {
+  text-align: center;
+  font-size: calc(0.8rem + 8px);
+  font-weight: 300;
+  max-width: 750px;
+  margin: 2px auto 3.5rem;
+  letter-spacing: 1px;
+}
+
+#info-section #info-blocks {
+  font-size: 0;
+  margin-bottom: 6rem;
+}
+
+#info-section #info-blocks .info-block {
+  width: 33.33%;
+  display: inline-block;
+  /* You have to use REM here because the font-size above is 0 */
+  padding: 2.2rem 1rem;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: 16%;
+  background-position: center top;
+}
+
+#info-section #info-blocks .info-block * {
+  text-align: center;
+}
+
+#info-section #info-blocks .info-block h3 {
+  font-size: 1.5rem;
+}
+
+#info-section #info-blocks .info-block p {
+  font-size: 0.9rem;
+  line-height: 180%;
+  height: 84px;
+}
+
+#info-section #info-blocks .info-block a {
+  font-size: 1rem;
+  display: block;
+  font-weight: 700;
+}
+
+#info-section #info-blocks #support {
+  background-image: url(images/support.png);
+}
+
+#info-section #info-blocks #worldwide {
+  background-image: url(images/worldwide.png);
+}
+
+#info-section #info-blocks #cloud {
+  background-image: url(images/cloud.png);
 }
