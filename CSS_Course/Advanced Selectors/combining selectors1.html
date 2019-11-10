@@ -1,0 +1,72 @@
+<!--
+ * ****************************************************** * 
+ * Created Date: Sunday, 10th November 2019 1:42:07 pm    * 
+ * Author: Marcello Alfaro                                * 
+ * Email: marcello.alfaro1@gmail.com                      * 
+ *               --------------------------               * 
+ * Last Modified: Sunday, 10th November 2019 3:11:26 pm   * 
+ * Modified By: Marcello Alfaro                           * 
+ *               --------------------------               * 
+ * Copyright (c) 2019 - Marshall Inc.                     * 
+ * ****************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Combining Selectors</title>
+    <style>
+      body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        margin: 58px;
+      }
+
+      article {
+        width: 600px;
+      }
+
+      p {
+        line-height: 200%;
+      }
+
+      article:hover > p {
+        opacity: 0.8;
+      }
+
+      p:not(:first-child):hover {
+        color: green;
+      }
+
+      /* Id's - 1 point for each id selector */
+      /* Classes - 1 point for each class pseudo class selector */
+      /* Elements - 1 point for each element and pseudo element selector */
+    </style>
+  </head>
+  <body>
+    <article>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        labore fugiat distinctio! Accusantium vero eos, voluptatem, doloribus
+        velit tempora ea soluta nam temporibus modi neque possimus mollitia
+        delectus vitae quod!
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos illo cum,
+        quibusdam molestiae adipisci expedita sed a! Mollitia adipisci beatae,
+        esse veniam possimus exercitationem delectus aut! Blanditiis minus
+        incidunt aliquid!
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+        tenetur laborum itaque officia similique, atque corrupti quasi quidem et
+        sunt, possimus ea hic. Minima fugiat, aut nemo dolorum vitae quae.
+      </p>
+    </article>
+  </body>
+</html>

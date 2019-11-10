@@ -1,0 +1,54 @@
+<!--
+ * ****************************************************** * 
+ * Created Date: Thursday, 7th November 2019 11:27:53 am  * 
+ * Author: Marcello Alfaro                                * 
+ * Email: marcello.alfaro1@gmail.com                      * 
+ *               --------------------------               * 
+ * Last Modified: Thursday, 7th November 2019 11:27:54 am * 
+ * Modified By: Marcello Alfaro                           * 
+ *               --------------------------               * 
+ * Copyright (c) 2019 - Marshall Inc.                     * 
+ * ****************************************************** * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Selecting Via Hierarchy</title>
+    <style>
+      /* Child selector */
+      /* Can only select elements that are directly inside, this 
+      will only select h1 that are childer of the main tag not descendants */
+      main > h1 {
+        color: blue;
+      }
+
+      /* Adjacent selector */
+      /* This will only select a p tag tha is adjacent to an h1,
+      also cant be elements above or between it */
+      h1 + p {
+        color: red;
+        font-weight: 800;
+      }
+      /* General Sibling Selector */
+      /* This will select all p tags that come after an H1 as siblings not descendants */
+      h1 ~ p {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>First Heading</h1>
+      <div>
+        <h1>Second Heading</h1>
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+        <h2>Sub header</h2>
+        <p>third header</p>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!--
+ * ****************************************************** * 
+ * Created Date: Thursday, 7th November 2019 12:37:53 pm  * 
+ * Author: Marcello Alfaro                                * 
+ * Email: marcello.alfaro1@gmail.com                      * 
+ *               --------------------------               * 
+ * Last Modified: Thursday, 7th November 2019 12:37:53 pm * 
+ * Modified By: Marcello Alfaro                           * 
+ *               --------------------------               * 
+ * Copyright (c) 2019 - Marshall Inc.                     * 
+ * ****************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin: 128px auto;
+      }
+      /* used to to query elements with their attributes  */
+      a[href] {
+        font-size: 22px;
+      }
+      /* Not very useful for classes cuz when adding another class it wont work,
+      a fix to this use the ~= that means it could start with btn or could be separated,
+      can also use ^ to match de begining of a string like btn, bt0 wont work, also $ to
+      match the end of a word like er or other, and finally substring * that will match
+      words or letters  */
+      button[class~='btn'] {
+        padding: 0.6em 2.2em;
+        border-radius: 4px;
+        background: transparent;
+        border: 2px solid;
+        outline: none;
+        text-transform: uppercase;
+      }
+
+      button[class*='btn'][class*='-large'] {
+        font-size: 140%;
+      }
+      button[class*='btn'][class*='-extra-large'] {
+        font-size: 180%;
+      }
+      button[class*='btn'][class*='primary'] {
+        color: blue;
+      }
+      button[class*='btn'][class*='success'] {
+        color: limegreen;
+      }
+      button[class*='btn'][class*='danger'] {
+        color: red;
+      }
+    </style>
+    <title>Attribute Selector</title>
+  </head>
+  <body>
+    <!-- <a href="">This is a link</a>
+    <a>This a link</a> -->
+
+    <button class="btn other" type="button" name="button">CLick Me</button>
+    <button type="button" class="btn-large" name="button">CLick Me</button>
+    <button type="button" class="btn-extra-large" name="button">
+      CLick Me
+    </button>
+
+    <br /><br />
+
+    <button type="button" class="btn-primary" name="button">CLick Me</button>
+    <button type="button" class="btn-large success" name="button">
+      CLick Me
+    </button>
+    <button type="button" class="btn-extra-large danger" name="button">
+      CLick Me
+    </button>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!--
+ * ****************************************************** * 
+ * Created Date: Thursday, 7th November 2019 2:08:57 pm   * 
+ * Author: Marcello Alfaro                                * 
+ * Email: marcello.alfaro1@gmail.com                      * 
+ *               --------------------------               * 
+ * Last Modified: Thursday, 7th November 2019 2:08:57 pm  * 
+ * Modified By: Marcello Alfaro                           * 
+ *               --------------------------               * 
+ * Copyright (c) 2019 - Marshall Inc.                     * 
+ * ****************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pseudo Classes 1</title>
+    <style>
+      body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+      /* We've seen pseudo classes such as this h1:hover */
+
+      /* This selects h1s tat are itself a first child */
+      h1:first-child {
+        color: blue;
+      }
+
+      h1:last-child {
+        color: red;
+      }
+
+      h1:only-child {
+        color: deeppink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <h1>This is a header</h1>
+      <div>
+        <h1>This is a header</h1>
+      </div>
+      <h1>This is a header</h1>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!--
+ * ****************************************************** * 
+ * Created Date: Sunday, 10th November 2019 12:26:45 pm   * 
+ * Author: Marcello Alfaro                                * 
+ * Email: marcello.alfaro1@gmail.com                      * 
+ *               --------------------------               * 
+ * Last Modified: Sunday, 10th November 2019 1:07:52 pm   * 
+ * Modified By: Marcello Alfaro                           * 
+ *               --------------------------               * 
+ * Copyright (c) 2019 - Marshall Inc.                     * 
+ * ****************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pseudo Elements</title>
+    <style>
+      /* pseudo element can be identified by the 2 :: colons rathern than
+        pseudo classes example ::placeholder*/
+
+      /* A pseudo class is sort like styling a certain amount of
+         your html as if it was an element */
+
+      body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+
+      p {
+        width: 60%;
+        line-height: 200%;
+        position: relative;
+        padding: 20px;
+      }
+
+      /*       p::first-letter {
+        font-size: 300%;
+        padding-right: 2px;
+      }
+
+      p::first-line {
+        font-size: 200%;
+      }
+ */
+      /* is like putting a span tag before something */
+      p::before {
+        content: 'before ';
+        border-top: 4px solid black;
+        display: block;
+        width: 22%;
+        padding-bottom: 14px;
+      }
+
+      p::after {
+        content: '';
+        background: black;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 140px;
+        width: 30%;
+        background: transparent;
+        border-left: 1px solid;
+        border-bottom: 1px solid;
+      }
+
+      /* this replaced elements only work with elements with closing tags  */
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit laudantium
+      expedita id architecto facere libero nemo dolores accusantium earum
+      cupiditate aliquid eveniet quasi natus similique, iste veritatis beatae
+      fugiat placeat.
+    </p>
+  </body>
+</html>
