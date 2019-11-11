@@ -1,0 +1,120 @@
+/*
+ * ****************************************************** * 
+ * Created Date: Sunday, 10th November 2019 5:57:10 pm    * 
+ * Author: Marcello Alfaro                                * 
+ * Email: marcello.alfaro1@gmail.com                      * 
+ *               --------------------------               * 
+ * Last Modified: Sunday, 10th November 2019 9:55:01 pm   * 
+ * Modified By: Marcello Alfaro                           * 
+ *               --------------------------               * 
+ * Copyright (c) 2019 - Marshall Inc.                     * 
+ * ****************************************************** * 
+ */
+
+/* Begin Landing Section */
+
+#landing {
+  height: 100vh;
+  background: url(../images/landing.png);
+  background-attachment: fixed;
+  background-size: cover;
+  /* if have a background image and h1 with 40px on top
+  it will push the background down as well, overflow fixes that */
+  overflow-y: auto;
+}
+
+#landing h1,
+#landing p,
+#landing button {
+  background: white;
+  width: max-content;
+  display: block;
+}
+
+#landing h1 {
+  margin-top: 3em;
+  padding: 0.1em 1em;
+}
+
+#landing p {
+  margin-top: 1.4em;
+  padding: 0.8em 1em;
+  width: 40rem;
+  letter-spacing: -0.5px;
+}
+
+#landing button {
+  margin-top: 3em;
+  padding: 0.6em 4em;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+#landing button:hover {
+  opacity: 0.5;
+}
+
+/* Ends Landing Section */
+
+/* Begin NavBar Section */
+
+#landing nav {
+  background: white;
+  font-size: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid;
+}
+
+#landing nav > div {
+  padding: 12px 2rem;
+  display: inline-block;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+#landingnav > div:nth-child(2) {
+  width: 50%;
+}
+
+#landing nav ul {
+  width: max-content;
+  display: block;
+}
+
+#landing nav ul li a {
+  padding: 0 2.2rem;
+}
+
+#landing nav a:hover {
+  opacity: 0.6;
+}
+
+#landing nav > div > div {
+  width: max-content;
+  margin-left: auto;
+  position: absolute;
+  margin-right: 2.2rem;
+  right: 0;
+}
+
+#landing nav form {
+  display: inline-block;
+}
+
+#landing nav input {
+  border-bottom: 1px solid;
+  padding: 0 8px 2px;
+}
+
+#landing nav i {
+  vertical-align: bottom;
+  padding-bottom: 4px;
+}
+
+#landing nav i[class*='search'] {
+  border-bottom: 1px solid;
+  margin-right: 1rem;
+}
+/* Ends NavBar Section */
