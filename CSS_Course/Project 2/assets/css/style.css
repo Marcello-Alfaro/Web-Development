@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                * 
  * Email: marcello.alfaro1@gmail.com                      * 
  *               --------------------------               * 
- * Last Modified: Sunday, 10th November 2019 9:55:01 pm   * 
+ * Last Modified: Friday, 15th November 2019 11:34:36 pm  * 
  * Modified By: Marcello Alfaro                           * 
  *               --------------------------               * 
  * Copyright (c) 2019 - Marshall Inc.                     * 
@@ -118,3 +118,67 @@
   margin-right: 1rem;
 }
 /* Ends NavBar Section */
+
+/* Begin Action Section */
+
+#action-section {
+  width: max-content;
+  margin: 8rem 0;
+}
+
+#action-section .actionable {
+  width: 16.6rem;
+  height: 25rem;
+  display: inline-block;
+  margin: 0 0.4rem;
+  background-size: cover;
+  background-position: center bottom;
+  vertical-align: top;
+}
+
+/* Note: Use background-image with background-cover
+  in order to stretch a background image to fill its
+  entire window or container */
+
+#action-section #deals {
+  background-image: url(../images/new_deals.jpg);
+}
+
+#action-section #new_stuff {
+  background-image: url(../images/new_stuff.jpg);
+}
+
+#action-section #popular {
+  background-image: url(../images/most_popular.jpg);
+}
+
+#action-section #deals a {
+  background-color: rgba(236, 7, 55, 0.7);
+}
+
+#action-section #new_stuff a {
+  background-color: rgba(28, 48, 214, 0.7);
+}
+
+#action-section #popular a {
+  background-color: rgba(236, 174, 71, 0.7);
+}
+
+#action-section .actionable > a {
+  vertical-align: top;
+  opacity: 0;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.5s;
+}
+
+#action-section .actionable > a:hover {
+  opacity: 1;
+}
+
+#action-section .actionable a h4 {
+  position: relative;
+  top: 45%;
+}
+
+/* Ends Action Section */
