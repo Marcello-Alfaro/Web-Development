@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  * 
  * Email: marcello.alfaro1@gmail.com                        * 
  *                --------------------------                * 
- * Last Modified: Monday, 25th November 2019 11:21:08 pm    * 
+ * Last Modified: Tuesday, 26th November 2019 11:01:43 am   * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                * 
  * Copyright (c) 2019 - Marshall Inc.                       * 
@@ -392,6 +392,45 @@
 
   #second-segment p {
     width: 44%;
+  }
+
+  #second-segment h3,
+  #second-segment p,
+  #second-segment a {
+    margin-right: 44px;
+  }
+
+  #third-segment input[type='email'] {
+    width: 380px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #segment-container .segment-container {
+    margin: 0 184px;
+  }
+
+  #first-segment h1,
+  #first-segment b {
+    text-align: center;
+    width: 100%;
+  }
+
+  #first-segment button {
+    margin: 1.6em auto 0;
+    width: max-content;
+    display: block;
+  }
+
+  #second-segment p {
+    width: calc(40% + 120px);
+  }
+
+  #second-segment h3,
+  #second-segment p,
+  #second-segment a {
+    position: relative;
+    left: 60px;
   }
 }
 /* Slider Section */
