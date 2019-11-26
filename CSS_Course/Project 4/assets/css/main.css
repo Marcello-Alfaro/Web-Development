@@ -1,0 +1,397 @@
+/*
+ * ******************************************************** * 
+ * Created Date: Sunday, 24th November 2019 10:35:01 pm     * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Monday, 25th November 2019 11:21:08 pm    * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2019 - Marshall Inc.                       * 
+ * ******************************************************** * 
+ */
+
+/* Navbar Section */
+#navbar {
+  text-transform: uppercase;
+}
+
+#navbar input,
+#navbar label {
+  display: none;
+}
+
+#navbar h6,
+#navbar nav {
+  display: inline-block;
+}
+
+#navbar h6 {
+  padding-left: 14em;
+  padding-right: 6em;
+  background-color: #008e44;
+  color: white;
+}
+
+#navbar ul {
+  font-weight: 700;
+}
+
+#navbar a,
+#navbar h6 {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+#navbar a {
+  padding-right: 5.6em;
+  padding-left: 5.6em;
+  color: #c82b35;
+  transition: all 0.32s;
+}
+
+#navbar a:hover {
+  transform: scale(1.16);
+  background-color: #008e44;
+  color: white;
+}
+
+@media (max-width: 1280px) {
+  #navbar h6 {
+    padding-left: 12em;
+    padding-right: 3em;
+  }
+
+  #navbar a {
+    padding-left: 4.8em;
+    padding-right: 4.8em;
+  }
+}
+
+@media (max-width: 1024px) {
+  #navbar h6 {
+    padding-left: 8.8em;
+    padding-right: 1.6em;
+  }
+
+  #navbar a {
+    padding-left: 3.6em;
+    padding-right: 3.6em;
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar h6 {
+    padding: 22px 4rem;
+    display: block;
+  }
+
+  #navbar nav,
+  #navbar li,
+  #navbar a {
+    display: block;
+  }
+
+  #navbar a {
+    padding: 4vh 0;
+    margin: 2vh 0;
+  }
+
+  #navbar input[type='checkbox'] {
+    display: inline-block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  #navbar input[type='checkbox']:checked ~ nav ul {
+    transform: translateX(0);
+  }
+
+  #navbar input[type='checkbox']:checked ~ label {
+    opacity: 0.1;
+  }
+
+  #navbar label {
+    background-image: url(../images/menu-icon.png);
+    /* Make sure the whole image is shown  */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    top: 16px;
+    right: 4rem;
+    transition: opacity 0.2s;
+  }
+
+  #navbar ul {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 80vh;
+    padding-bottom: 64px;
+    box-sizing: border-box;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+  }
+
+  #navbar li {
+    background-color: white;
+    width: 100%;
+  }
+
+  #navbar a {
+    text-align: center;
+  }
+
+  #navbar a:hover {
+    transform: scale(1);
+  }
+}
+
+/* Navbar Section */
+
+/* Slider Section */
+
+#slider-section {
+  height: 80vh;
+  width: 100%;
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+#slider-management {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+
+#left-arrow,
+#right-arrow {
+  position: absolute;
+  color: #333;
+  padding: 12px;
+  top: 40%;
+  height: 130px;
+  width: 65px;
+  background-color: rgba(17, 17, 17, 0.8);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  transition: opacity 0.12s ease-out;
+}
+
+#left-arrow:hover,
+#right-arrow:hover {
+  opacity: 0.3;
+}
+
+#left-arrow {
+  left: 100px;
+  background-image: url(../images/left-arrow.png);
+}
+
+#right-arrow {
+  right: 100px;
+  background-image: url(../images/right-arrow.png);
+}
+
+#slider-circles {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#slider-circles div {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background-color: black;
+  border-radius: 500px;
+  margin: 0 2px;
+  opacity: 0.3;
+}
+
+#slider-circles .active-circle-segment {
+  opacity: 0.8;
+}
+
+#segment-container {
+  width: 300%;
+  height: 100%;
+  animation-fill-mode: both;
+  animation-duration: 0.75s;
+}
+
+#segment-container > div {
+  display: inline-block;
+  vertical-align: top;
+  width: 33.333%;
+  height: 100%;
+}
+
+#segment-container #first-segment {
+  background-color: crimson;
+}
+
+#segment-container #second-segment {
+  background-color: coral;
+}
+
+#segment-container #third-segment {
+  background-color: aqua;
+}
+
+#segment-container #first-segment,
+#segment-container #second-segment,
+#segment-container #third-segment {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#segment-container #first-segment {
+  background-image: url(../images/bg-1.png);
+}
+
+#segment-container #second-segment {
+  background-image: url(../images/bg-2.jpg);
+}
+
+#segment-container #third-segment {
+  background-image: url(../images/bg-3.jpg);
+}
+
+#segment-container .segment-container {
+  margin: 0 248px;
+}
+
+#first-segment {
+  color: white;
+  font-weight: 300;
+}
+
+#first-segment h1 {
+  margin-top: 24vh;
+}
+
+#first-segment b {
+  display: table;
+  color: #09c865;
+  font-weight: 500;
+}
+
+#first-segment button {
+  background-color: #008e44;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 2em;
+  padding: 0.6em 3.4em;
+  transition: 0.2s;
+  transition-property: background-color, color;
+}
+
+#first-segment button:hover {
+  background-color: white;
+  color: #008e44;
+}
+
+#second-segment h3 {
+  margin: 24vh 0 0.6em;
+  font-weight: 700;
+}
+
+#second-segment p {
+  width: cal(38% + 150px);
+}
+
+#second-segment em {
+  color: #09c865;
+}
+
+#second-segment a {
+  display: block;
+  width: max-content;
+  margin-top: 1.4em;
+  border-bottom: 2px solid;
+}
+
+#second-segment a:hover {
+  opacity: 0.6s;
+}
+
+#second-segment h3,
+#second-segment p,
+#second-segment a {
+  color: #e9e9e9;
+  margin-left: auto;
+  margin-right: 8%;
+  text-align: right;
+}
+
+#third-segment h2 {
+  margin-top: 24vh;
+  color: white;
+}
+
+#third-segment form {
+  margin-top: 12px;
+}
+
+#third-segment input[type='email'] {
+  width: 500px;
+  padding: 8px;
+  color: #c82b35;
+}
+
+#third-segment input[type='submit'] {
+  padding: 8px 42px 8px 22px;
+  background-color: #c82b35;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+#third-segment input[type='submit']:hover {
+  opacity: 0.8;
+}
+
+#third-segment .small {
+  display: inline-block;
+  margin-top: 31px;
+  margin-left: 21px;
+  color: white;
+}
+
+@media (max-width: 1280px) {
+  #left-arrow,
+  #right-arrow {
+    height: 120px;
+    width: 60px;
+    opacity: 0.4;
+  }
+
+  #left-arrow {
+    left: 70px;
+  }
+
+  #right-arrow {
+    right: 70px;
+  }
+
+  #segment-container .segment-container {
+    margin: 0 164px;
+  }
+
+  #second-segment p {
+    width: 44%;
+  }
+}
+/* Slider Section */

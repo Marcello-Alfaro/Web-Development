@@ -1,0 +1,60 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Sunday, 24th November 2019 7:39:22 pm      * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Sunday, 24th November 2019 8:17:25 pm     * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2019 - Marshall Inc.                       * 
+ * ******************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- This is styles will only be loaded during for screen and print media -->
+    <link rel="stylesheet" href="" media="screen, print" />
+    <title>Types&Features</title>
+    <!-- pixabay.com website for free images -->
+    <style>
+      /* Whatever goes inside this parentheses whatever you're comparing
+    is known as feature descriptor. such as max-witdh, min-width and width */
+      /* Types
+    There are 4 types of media
+    1. All: Refers all the next three
+    2. Screen: Screen media is anything thats on a screen, like desktop
+        smartphone
+    3. Print: is used to determine how your pages styled when its being printed
+        or when looking at the print preview of a website
+    4. Speech: mostly for speech synthesizers or screen readers */
+
+      /* @media screen and (max-width) {
+        
+    } */
+
+      @media (min-height: 1400px) {
+      }
+      /* This reference the width of the actual device not the current viewport */
+      @media (min-device-width: 1000px) {
+      }
+      /* Means the width is bigger that the height */
+      @media (orientation: landscape) {
+        body {
+          background-color: blue;
+        }
+      }
+      /* The opposite */
+      @media (orientation: portrait) {
+        body {
+          background-color: red;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

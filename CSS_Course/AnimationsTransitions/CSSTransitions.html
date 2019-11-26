@@ -1,0 +1,70 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Sunday, 24th November 2019 9:08:03 pm      * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Sunday, 24th November 2019 9:32:53 pm     * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2019 - Marshall Inc.                       * 
+ * ******************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Transitions</title>
+    <style>
+      body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        margin: 112px;
+      }
+
+      h1 {
+        font-size: 62px;
+        color: deepskyblue;
+        cursor: default;
+        /* transition has three properties
+        1. The first one is the property you want to transition
+            example: color
+        2. is the length of the trans .5s
+        3. The timing function like linear, linear means its going from
+        deepsky blue to blue over a fixed set of time, its not gonna speed up
+        */
+        /*  transition: color 0.2s linear, font-size 0.3s linear,
+          letter-spacing 0.3s linear; */
+        /* transition: all 0.2s 0.5s linear; */
+        /* The fisrt time value is the length of the transition and the next one
+          is going to be the delay */
+
+        /* Short hand */
+        /* transition-property: all;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+        transition-delay: 0.1s; */
+
+        /* browser prefixes */
+        /* webkit for chrome and safari */
+        --webkit-transition: linear all 0.2s;
+        /* moz for firefox */
+        --moz-transition: linear all 0.2s;
+        /* o for opera */
+        --o-transition: linear all 0.2s;
+      }
+
+      h1:hover {
+        color: crimson;
+        font-size: 82px;
+        letter-spacing: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Animations are Awesome</h1>
+  </body>
+</html>
