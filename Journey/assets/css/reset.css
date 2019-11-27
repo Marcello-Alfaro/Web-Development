@@ -1,0 +1,36 @@
+/*
+ * ******************************************************** * 
+ * Created Date: Tuesday, 26th November 2019 11:20:51 am    * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Wednesday, 27th November 2019 12:59:05 am * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2019 - Marshall Inc.                       * 
+ * ******************************************************** * 
+ */
+
+table {
+  border-collapse: collapse;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+li,
+a {
+  display: inline-block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
