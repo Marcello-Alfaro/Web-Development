@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  * 
  * Email: marcello.alfaro1@gmail.com                        * 
  *                --------------------------                * 
- * Last Modified: Wednesday, 27th November 2019 11:43:36 pm * 
+ * Last Modified: Thursday, 28th November 2019 11:57:26 am  * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                * 
  * Copyright (c) 2019 - Marshall Inc.                       * 
@@ -596,6 +596,21 @@ hr.description-separator {
   width: 90%;
   color: rgba(71, 82, 94, 0.3);
   border: 1px solid;
+}
+
+div#social-indicators small {
+  margin-left: 4.5em;
+}
+
+div#social-indicators div.col-3:last-child small {
+  margin-left: 2.8em;
+}
+
+div#social-indicators small .likes,
+div#social-indicators small .comments {
+  color: #3498db;
+  padding-right: 0.2em;
+  font-weight: 700;
 }
 
 div.social-links {
