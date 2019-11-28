@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Wednesday, 27th November 2019 11:21:01 pm * 
+ * Last Modified: Thursday, 28th November 2019 12:02:24 pm  * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  * Copyright (c) 2019 - Marshall Inc.                       *
@@ -22,4 +22,9 @@ $('#showComment').click(function() {
       $('#comments-section').css('display', 'none');
     });
   }
+});
+var likes = 0;
+$('#like').click(function() {
+  $('span.likes').text(likes);
+  likes++;
 });
