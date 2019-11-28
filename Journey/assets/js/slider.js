@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Tuesday, 26th November 2019 9:40:56 pm    * 
+ * Last Modified: Wednesday, 27th November 2019 8:19:32 pm  * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  * Copyright (c) 2019 - Marshall Inc.                       *
@@ -21,7 +21,7 @@ function Slider_Controller() {
   this.prev = document.getElementById('left-arrow');
 
   this.currentSegmentOnScreen = 0;
-  this.animationDelayInSeconds = 10;
+  this.animationDelayInSeconds = 15;
   this.timeoutID = 0;
 
   // ===========

@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  * 
  * Email: marcello.alfaro1@gmail.com                        * 
  *                --------------------------                * 
- * Last Modified: Wednesday, 27th November 2019 12:28:48 pm * 
+ * Last Modified: Wednesday, 27th November 2019 11:41:41 pm * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                * 
  * Copyright (c) 2019 - Marshall Inc.                       * 
@@ -116,7 +116,7 @@
               Formulario de Ingreso
             </h5>
           </div>
-          <div class="modal-body">
+          <div class="modal-body justify-content-center">
             <section id="login">
               <h6 class="text-center">
                 ¿No tienes una cuenta?
@@ -137,9 +137,8 @@
                     >Usuario</label
                   >
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
-                    id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Digite su ID o Email"
                   />
@@ -151,7 +150,6 @@
                   <input
                     type="password"
                     class="form-control"
-                    id="exampleInputPassword1"
                     placeholder="Contraseña"
                   />
                 </div>
@@ -218,7 +216,6 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="exampleInputEmail1"
                         aria-describedby="emailHelp"
                       />
                     </div>
@@ -229,7 +226,6 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="exampleInputEmail1"
                         aria-describedby="emailHelp"
                       />
                     </div>
@@ -246,7 +242,6 @@
                         <input
                           type="text"
                           class="form-control"
-                          id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                         />
                       </div>
@@ -257,7 +252,6 @@
                         <input
                           type="email"
                           class="form-control"
-                          id="exampleInputEmail1"
                           aria-describedby="emailHelp"
                         />
                       </div>
@@ -271,21 +265,13 @@
                       <label class="labelRegistro" for="exampleInputPassword1"
                         >Contraseña <span class="required">*</span>
                       </label>
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="exampleInputPassword1"
-                      />
+                      <input type="password" class="form-control" />
                     </div>
                     <div class="col-6">
                       <label class="labelRegistro" for="exampleInputPassword1"
                         >Confirmar Contraseña <span class="required">*</span>
                       </label>
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="exampleInputPassword1"
-                      />
+                      <input type="password" class="form-control" />
                     </div>
                   </div>
                 </div>
@@ -331,7 +317,7 @@
         <div id="first-segment">
           <div class="segment-container">
             <h1>Alemania es<b>Belleza</b></h1>
-            <button>Ver mas</button>
+            <button>Ver más</button>
           </div>
         </div>
         <div id="second-segment">
@@ -442,18 +428,23 @@
     <div class="container">
       <section id="post-section">
         <div class="row">
-          <div class="col-6">
-            <div class="avatar"></div>
-
+          <div class="col-2">
+            <div
+              class="avatar"
+              style="background-image: url(assets/images/viajeschavetas.jpg);"
+            ></div>
+          </div>
+          <div class="col-7">
             <div id="user">
               <span class="username"
                 ><a href="">Chavetas </a
                 ><img src="assets/images/check.png" alt="" />
                 <em class="tipo">publico una foto</em></span
               >
+              <span class="date">Nov 27 2019</span>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-3">
             <button class="btn-seguir">Seguir</button>
           </div>
         </div>
@@ -495,26 +486,57 @@
           <div class="row">
             <div class="col-3">
               <span
-                ><a href=""
-                  ><i class="far fa-thumbs-up fa-2x"></i> Me gusta</a
-                ></span
+                ><button>
+                  <i class="far fa-thumbs-up fa-2x"></i> Me gusta
+                </button></span
               >
             </div>
             <div class="col-3">
               <span
-                ><a href=""
-                  ><i class="far fa-comments fa-2x"></i>Comentar</a
-                ></span
+                ><button id="showComment">
+                  <i class="far fa-comments fa-2x"></i>Comentar
+                </button></span
               >
             </div>
             <div class="col-3">
               <span
-                ><a href=""
-                  ><i class="fas fa-share fa-2x"></i>Compartir</a
-                ></span
+                ><button>
+                  <i class="fas fa-share fa-2x"></i>Compartir
+                </button></span
               >
             </div>
-            <div class="col-6"></div>
+          </div>
+        </div>
+
+        <div id="comments-section">
+          <hr class="description-separator" />
+          <div class="new-comment">
+            <form action="">
+              <div class="row">
+                <div class="col-4">
+                  <button class="btn-comment">Comentar</button>
+                </div>
+                <div class="col-8">
+                  <input type="text" placeholder="¿En que estas pensando?" />
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="posted-comments">
+            <div class="row">
+              <div class="col-12">
+                <hr class="comment-separator" />
+                <h5><a href="">El Carbo</a></h5>
+                <p>Ayy yo quiero ir!! :(</p>
+                <hr class="comment-separator" />
+                <h5><a href="">Marshall</a></h5>
+                <p>Send Nudes!</p>
+                <hr class="comment-separator" />
+                <h5><a href="">La tia</a></h5>
+                <p>Noo invitann!!</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -577,5 +599,6 @@
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/jQuery-3.4.1.js"></script>
     <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/commets.js"></script>
   </body>
 </html>
