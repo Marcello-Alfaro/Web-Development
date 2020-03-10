@@ -1,0 +1,53 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Monday, 27th January 2020 11:42:42 am      * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Monday, 2nd March 2020 11:58:06 am        * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2020 - Marshall Inc.                       * 
+ * ******************************************************** * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TimingFunction</title>
+    <style>
+      /* https://cubic-bezier.com/ */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 32px 112px;
+      }
+      h1 {
+        color: deeppink;
+        font-size: 82px;
+        margin: 0;
+        transition: font-size 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* ease make the animation a bit more smoother than linear */
+      }
+
+      h2 {
+        color: brown;
+        font-size: 82px;
+        margin: 0;
+        transition: font-size 0.4s ease-out;
+      }
+
+      h2:hover {
+        font-size: 112px;
+      }
+
+      h1:hover {
+        font-size: 112px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Animation</h1>
+    <h2>CSS Animation H2</h2>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Tuesday, 3rd March 2020 12:32:38 pm        * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Tuesday, 3rd March 2020 12:41:35 pm       * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2020 - Marshall Inc.                       * 
+ * ******************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Resources</title>
+    <style>
+      /* Sites to make make and find animations */
+      /* Animista 
+        Animate.css 
+    */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 112px;
+      }
+
+      h3 {
+        display: inline-block;
+        margin: 10px;
+        font-size: 42px;
+        background-color: crimson;
+        border-radius: 8px;
+        padding: 18px 44px;
+        color: white;
+        width: max-content;
+        cursor: default;
+      }
+
+      .scale-up-left {
+        animation: scale-up-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      }
+
+      @keyframes scale-up-left {
+        0% {
+          transform: scale(0.5);
+          transform-origin: 0% 50%;
+        }
+        100% {
+          transform: scale(1);
+          transform-origin: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h3 class="scale-up-left">Hello, HTML</h3>
+  </body>
+</html>

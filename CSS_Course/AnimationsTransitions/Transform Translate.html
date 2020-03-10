@@ -1,0 +1,60 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Monday, 2nd March 2020 11:58:59 am         * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Monday, 9th March 2020 5:23:44 pm         * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2020 - Marshall Inc.                       * 
+ * ******************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform Translate</title>
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 150px;
+        font-size: 0;
+      }
+
+      div {
+        height: 400px;
+        width: 33.33%;
+        display: inline-block;
+        background-size: cover;
+        position: relative;
+        transition: 0.4s all;
+      }
+
+      div:nth-child(1) {
+        background-image: url('los-angeles.jpg');
+      }
+      div:nth-child(2) {
+        background-image: url('new-york.jpg');
+      }
+      div:nth-child(3) {
+        background-image: url('chicago.jpg');
+      }
+
+      div:hover {
+        /* use translate to move things around (x, y) */
+        /* Moves image up - negative values, + values to move it up*/
+        /* transform: translate(x, y); */
+        transform: translateX(-40px);
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>

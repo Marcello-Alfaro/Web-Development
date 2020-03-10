@@ -1,0 +1,29 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Monday, 9th March 2020 5:37:24 pm          * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Monday, 9th March 2020 5:39:46 pm         * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2020 - Marshall Inc.                       * 
+ * ******************************************************** * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optimizing Animations</title>
+    <style>
+      .example {
+        /* This is telling the browser to be prepare when
+          this settings will change, is to garanteed that 
+          the browser will do it but is a way to keep things optimize */
+        will-change: padding, color;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

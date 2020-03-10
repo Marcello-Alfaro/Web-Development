@@ -1,0 +1,117 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Tuesday, 3rd March 2020 9:04:01 am         * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Monday, 9th March 2020 5:28:35 pm         * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ * Copyright (c) 2020 - Marshall Inc.                       * 
+ * ******************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Frame Animations</title>
+    <style>
+      /* CSS autoprefixer */
+      body {
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      h1 {
+        font-size: 112px;
+        font-weight: 200;
+        margin: 160px auto 0;
+        width: max-content;
+      }
+
+      button {
+        font-size: 1.7em;
+        padding: 0.5em 1.1em;
+        background-color: crimson;
+        color: white;
+        transition: 0.4s all;
+        border: 1px solid;
+        border-radius: 16px;
+        outline: none;
+      }
+
+      button:hover {
+        transform: translateY(-50px);
+        border: 1px solid crimson;
+        background-color: white;
+        color: crimson;
+      }
+
+      h1.anim-enter {
+        /* animation-name: fade-in; */
+        /* animation-duration: 0.9s;
+        animation-timing-function: ease-in; */
+
+        /*  animation-name: drop-down, color-blend;
+        animation-duration: 0.9s, 1s;
+        animation-timing-function: ease-out;
+        animation-delay: 1s; */
+        /* animation-iteration-count: 1; */ /* numbers */
+        /* animation-direction: alternate;
+        animation-play-state: running; */
+        /* fix black when animation is over */
+        /* animation-fill-mode: forwards; */
+
+        /* shorthand */
+        animation: 1s 0.4s both ease color-blend, 1s 0.4s both ease drop-down; /* for both */
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes loading {
+        0% {
+        }
+      }
+
+      @keyframes drop-down {
+        0% {
+          transform: translateY(-120px) scale(1.06);
+          opacity: 0;
+        }
+
+        60% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes color-blend {
+        0%,
+        100% {
+          color: blue;
+        }
+
+        50% {
+          color: deeppink;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="anim-enter">CSS Animations</h1>
+    <button class="loading">Click Me</button>
+  </body>
+</html>
