@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variables</title>
+    <style>
+         :root{
+             --container-margin: 282px;
+             --main-color: #006CFF;
+             --secondary-color: white;
+             --navbar-opacity: rgba(255,255,255, .2);
+         }
+
+         body, ul, li{
+             margin: 0;
+             padding: 0;
+         }
+
+        body, button{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: var(--main-color);
+        }
+
+        nav{
+            background-color: var(--navbar-opacity);
+        }
+
+        nav ul {
+            margin: 0 var(--container-margin);
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            color: var(--secondary-color);
+            display: inline-block;
+            text-decoration: none;
+            padding: 22px 84px;
+            padding-left: 0;
+        }
+
+        nav a:hover {
+            opacity: .6;
+        }
+
+        div {
+            margin: 0 var(--container-margin);
+        }
+
+        h1, h2, p, button {
+            color: var(--secondary-color);
+        }
+
+        h1{
+            margin: 21vh 0 0;
+            outline: none;
+            border: 1px solid;
+            border-radius: 500px;
+            padding: 12px 64px;
+            background-color: transparent;
+            transition: all .4s;
+        }
+
+        button:hover{
+            background-color: var(--secondary-color);
+            color: var(--main-color);
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, World</h1> 
+  </body>
+</html>

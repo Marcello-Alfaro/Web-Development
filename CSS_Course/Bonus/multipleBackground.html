@@ -1,0 +1,69 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Thursday, 7th May 2020 3:40:03 pm          * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Tuesday, 12th May 2020 2:51:58 pm         * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ *                    Copyright (c) 2020                    * 
+ * ******************************************************** * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Backgrounds</title>
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+        height: 100vh;
+
+        background-image: linear-gradient(
+            to right,
+            rgba(26, 110, 247, 0.9),
+            rgba(8, 88, 218, 0.7)
+          ),
+          url('Background Images/bg-1.jpg');
+        /* conver alone means both backgrounds are gonna cover,  */
+        background-size: cover;
+      }
+
+      h1,
+      p {
+        margin-left: 120px;
+        color: white;
+      }
+
+      h1 {
+        font-size: 102px;
+        font-weight: 800;
+        letter-spacing: 6px;
+        padding-top: 28vh;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      p {
+        letter-spacing: 0.8px;
+        width: 56%;
+        line-height: 220%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, Wolrd</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis earum
+      aspernatur consequatur deleniti possimus aliquam mollitia velit beatae.
+      Delectus eum voluptates animi, eius a expedita non aliquam consequuntur id
+      iure. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Reprehenderit, delectus ducimus, cupiditate incidunt debitis
+      necessitatibus assumenda iusto obcaecati quo aspernatur placeat id, facere
+      dolorum sed eveniet. Recusandae quos officiis ad.
+    </p>
+  </body>
+</html>
