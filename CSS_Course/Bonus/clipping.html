@@ -1,0 +1,56 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Wednesday, 13th May 2020 2:18:30 pm        * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Wednesday, 13th May 2020 3:50:02 pm       * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ *                    Copyright (c) 2020                    * 
+ * ******************************************************** * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clipping</title>
+    <style>
+      /* Website for clipping: https://bennettfeely.com/clippy/ */
+      /* With clip-pah we can make the buttom be like angled */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      /* div:nth-child(1) {
+        background-color: crimson;
+        height: 84vh; */
+      /* need x and y position, so the positions always start
+        at top left */
+      /*   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 100%);
+      }
+      div:nth-child(2) {
+        height: 28vh;
+      }
+      div:nth-child(3) {
+        background-color: crimson;
+        height: 84vh;
+        clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0% 100%);
+      } */
+
+      div {
+        margin: 120px auto;
+        background-image: url('Background images/bg-2.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        width: 400px;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  * 
  * Email: marcello.alfaro1@gmail.com                        * 
  *                --------------------------                * 
- * Last Modified: Tuesday, 12th May 2020 2:51:58 pm         * 
+ * Last Modified: Wednesday, 13th May 2020 1:17:42 pm       * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                * 
  *                    Copyright (c) 2020                    * 
@@ -24,12 +24,15 @@
 
         background-image: linear-gradient(
             to right,
-            rgba(26, 110, 247, 0.9),
-            rgba(8, 88, 218, 0.7)
+            rgba(31, 31, 31, 0.9),
+            rgba(8, 88, 218, 0) 70%
           ),
-          url('Background Images/bg-1.jpg');
-        /* conver alone means both backgrounds are gonna cover,  */
+          url('Background Images/bg-2.jpg');
+        /* conver alone means both backgrounds are gonna cover, to set
+        set two sizes you would just do a comma separator, the first size
+        for the first background and so on, same thing for background position  */
         background-size: cover;
+        background-position: left center;
       }
 
       h1,
@@ -55,7 +58,7 @@
     </style>
   </head>
   <body>
-    <h1>Hello, Wolrd</h1>
+    <h1>Hello, World</h1>
     <p>
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis earum
       aspernatur consequatur deleniti possimus aliquam mollitia velit beatae.

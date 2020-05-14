@@ -1,0 +1,74 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Wednesday, 13th May 2020 1:18:26 pm        * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Wednesday, 13th May 2020 2:17:22 pm       * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ *                    Copyright (c) 2020                    * 
+ * ******************************************************** * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Boxes</title>
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      div {
+        height: 460px;
+        width: 1740px;
+        margin: 142px auto 0;
+        background-repeat: no-repeat;
+        padding: 26px;
+        border: 14px solid #333;
+
+        /* Background origin */
+        /* background-image: url('css-icon.png');
+        background-size: 144px;
+        background-position: right bottom; */
+        /* Default is padding box, better understand use the
+        chrome tools */
+        /* background-origin: padding-box; */
+
+        /* background clip, the image is applied to the background
+        of the padding box of your element */
+        /* background-image: url('Background Images/bg-2.jpg');
+        background-position: left top;
+        background-size: cover; */
+        background-image: linear-gradient(to left, blue, deeppink);
+        /* default is padding-box */
+        /* background-clip: border-box; */
+        /* The background origin works with background position, so
+        if you put left top and content-box it will start at the left top
+        of the content box */
+        /* background-origin: border-box;
+        border-width: 32px;
+        border-color: rgba(0, 0, 0, 0.4); */
+        border: none;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      h1 {
+        margin-top: 12%;
+        font-size: 202px;
+        text-align: center;
+        font-weight: 900;
+        letter-spacing: -1px;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Hello, World</h1>
+    </div>
+  </body>
+</html>
