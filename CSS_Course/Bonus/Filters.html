@@ -1,0 +1,70 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Wednesday, 27th May 2020 2:48:56 pm        * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Wednesday, 27th May 2020 3:15:11 pm       * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ *                    Copyright (c) 2020                    * 
+ * ******************************************************** * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filters</title>
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+      }
+
+      /*       div {
+        height: 100vh;
+        background-image: url('background images/bg-2.jpg');
+        background-size: cover;
+
+        filter: blur(4px);
+      } */
+
+      div::before {
+        content: '';
+        /* This will make width and the height 
+        equal to the size of the div */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        position: absolute;
+        background-image: url('background images/bg-2.jpg');
+        background-size: cover;
+
+        /* filter: blur(10px); */
+
+        /*         height: 400px;
+        width: 400px;
+        margin: 16px;
+        filter: drop-shadow(4px 4px 10px #555); */
+
+        /* filter: opacity(0.2); */
+
+        /* filter: hue-rotate(260deg); */
+        /*  filter: grayscale(100%); */ /* Use % */
+        /* filter: contrast(50%); */
+        /* filter: brightness(70%); */
+        /* filter: invert(80%); */
+        /* filter: saturate(40%); */
+        /* filter: sepia(50%); */
+
+        filter: hue-rotate(180deg) brightness(60%);
+      }
+    </style>
+  </head>
+  <body>
+    <div><h1>Hello, World</h1></div>
+  </body>
+</html>

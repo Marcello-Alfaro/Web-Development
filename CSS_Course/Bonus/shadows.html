@@ -1,0 +1,55 @@
+<!--
+ * ******************************************************** * 
+ * Created Date: Wednesday, 27th May 2020 2:08:14 pm        * 
+ * Author: Marcello Alfaro                                  * 
+ * Email: marcello.alfaro1@gmail.com                        * 
+ *                --------------------------                * 
+ * Last Modified: Wednesday, 27th May 2020 2:48:05 pm       * 
+ * Modified By: Marcello Alfaro                             * 
+ *                --------------------------                * 
+ *                    Copyright (c) 2020                    * 
+ * ******************************************************** * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadows</title>
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 182px;
+      }
+
+      div {
+        background-image: url('background Images/bg-2.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 400px;
+        height: 400px;
+
+        /* first 4 are all in pixels  last is a color*/
+        /* First value: horizontal offset */
+        /* Second value: vertical offset */
+        /* Third value: Blur */
+        /* Fourth value: spread is basically the size*/
+        box-shadow: 10px 10px 10px -3px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-size: 94px;
+        font-weight: 400;
+        text-align: center;
+
+        text-shadow: 1px 1px 3px deepskyblue;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, World</h1>
+    <div></div>
+  </body>
+</html>
