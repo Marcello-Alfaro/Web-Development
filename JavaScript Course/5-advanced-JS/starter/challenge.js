@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Tuesday, 28th July 2020 4:05:08 pm        * 
+ * Last Modified: Thursday, 30th July 2020 4:31:47 pm       * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  *                    Copyright (c) 2020                    *
@@ -47,8 +47,11 @@ c) correct answer (I would use a number for this)
 
 (function () {
   var questions = [],
-    answer,
-    correctAnswer;
+    scoreCount;
+
+  scoreCount = {
+    totalScore: 0,
+  };
 
   var Question = function (question, answers, correctAnswer) {
     this.question = question;
@@ -66,22 +69,30 @@ c) correct answer (I would use a number for this)
     }
   }
 
-  function checkAnswer() {
-    if (answer == correctAnswer) {
-      console.log('Correct answer!!');
-    } else {
-      console.log('Wrong answer!!!');
-    }
-  }
+  var checkAnswer = function (ans) {
+    return ans == correctAnswer ? true : false;
+  };
 
   function init() {
     randomQuestion(questions);
-    answer = prompt();
-    if (answer != undefined) {
-      checkAnswer();
-      randomQuestion(questions);
-    } else {
-      answer = prompt();
+    var answer = parseInt(prompt());
+    if (answer != 'exit') {
+      if (checkAnswer(answer)) {
+        scoreCount.totalScore += 1;
+        console.log(
+          'Correct answer!! \nCurrent Score: ' +
+            scoreCount.totalScore +
+            '\n***********************************'
+        );
+        init();
+      } else {
+        console.log(
+          'Wrong Answer!!\nCurrent Score: ' +
+            scoreCount.totalScore +
+            ' \n***********************************'
+        );
+        init();
+      }
     }
   }
 
@@ -91,7 +102,7 @@ c) correct answer (I would use a number for this)
     1
   );
   var question_2 = new Question(
-    'JavaScript the coolest programming language in the world?',
+    'Is JavaScript the coolest programming language in the world?',
     ['Yes', 'No'],
     0
   );
