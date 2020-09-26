@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Tuesday, 25th August 2020 12:07:25 am     * 
+ * Last Modified: Saturday, 26th September 2020 5:45:37 pm  * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  *                    Copyright (c) 2020                    *
@@ -78,103 +78,34 @@
  a lot of random variables flowing around
 */
 
-// BUDGET CONTROLLER
+/* Budget controller variable is simply an object containing all the methods defined in there */
+
 var budgetController = (function () {
-  var Expense = function (id, descripcion, value) {
-    this.id = id;
-    this.descripcion = descripcion;
-    this.value = value;
-  };
+  var x = 23;
 
-  var Income = function (id, descripcion, value) {
-    this.id = id;
-    this.descripcion = descripcion;
-    this.value = value;
-  };
-
-  var data = {
-    allItems: {
-      exp: [],
-      inc: [],
-    },
-    totals: {
-      exp: 0,
-      inc: 0,
-    },
+  var add = function (a) {
+    return x + a;
   };
 
   return {
-    addItem: function (type, des, val) {
-      var newItem, ID;
-      ID = data.allItems[type][data.allItems[type].length - 1].id + 1;
-      if (type === 'exp') {
-        newItem = new Expense(ID, des, val);
-      } else if (type === 'inc') {
-        newItem = new Income(ID, des, val);
-      }
-
-      data.allItems[type].push(newItem);
-
-      return newItem;
+    publicTest: function (b) {
+      return add(b);
     },
   };
 })();
 
-// UI CONTROLLER
 var UIController = (function () {
-  var DOMStrings = {
-    inputType: '.add__type',
-    inputDescripcion: '.add__description',
-    inputValue: '.add__value',
-    inputBtn: '.add__btn',
-  };
-
-  return {
-    getInput: function () {
-      return {
-        type: document.querySelector(DOMStrings.inputType).value,
-        descripcion: document.querySelector(DOMStrings.inputDescripcion).value,
-        value: document.querySelector(DOMStrings.inputValue).value,
-      };
-    },
-    getDOMStrings: function () {
-      return DOMStrings;
-    },
-  };
+  // some code
 })();
 
-// APP CONTROLLER
-var controller = (function (budgetCtrl, UICtrl) {
-  var setupEventListeners = function () {
-    var DOM = UICtrl.getDOMStrings();
-    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
-
-    document.addEventListener('keypress', function (evt) {
-      if (evt.keyCode === 13 || evt.which === 13) {
-        ctrlAddItem();
-      }
-    });
-  };
-
-  var ctrlAddItem = function () {
-    // 1. Get the field input data
-    var input = UICtrl.getInput();
-    console.log(input);
-    // 2. Add the item to the budget controller
-    // 3. Add the item to the UI
-    // 4. Calculate the Budget
-    //5. Display the budget
-  };
+var AppController = (function (UICtrl, BudgetCtrl) {
+  var c = BudgetCtrl.publicTest(5);
 
   return {
-    init: function () {
-      console.log('Aplication has started');
-      setupEventListeners();
+    anotherPublic: function () {
+      console.log(c);
     },
   };
-})(budgetController, UIController);
+})(UIController, budgetController);
 
-// we create a init() function cuz we want to have a place where we can put
-// all the code that we want to be executed right at the beginning when our
-// aplication starts
-controller.init();
+AppController.anotherPublic();
