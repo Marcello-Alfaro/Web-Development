@@ -8,7 +8,7 @@ var resultado;
 
 for (var i = 0; i < mode.length; i++) {
   document.querySelector('#display1').style.display = 'inline-block';
-  mode[i].addEventListener('click', function() {
+  mode[i].addEventListener('click', function () {
     mode[0].classList.remove('selected');
     mode[1].classList.remove('selected');
     mode[2].classList.remove('selected');
@@ -33,7 +33,7 @@ for (var i = 0; i < mode.length; i++) {
 }
 
 //*! Codigo para Expresion regular de hashtags
-btnVerificarHash.addEventListener('click', function() {
+btnVerificarHash.addEventListener('click', function () {
   hashtagText = document.querySelector('#hash').value;
   const hashtagRegExp = new RegExp(/^([#][A-Z])(\w{1,13})$/);
   resultado = hashtagRegExp.test(hashtagText);
@@ -47,7 +47,7 @@ btnVerificarHash.addEventListener('click', function() {
 });
 
 //*! Codigo para Expresion regular de variables
-btnVerificarVar.addEventListener('click', function() {
+btnVerificarVar.addEventListener('click', function () {
   variableText = document.querySelector('#variable').value;
   const varRegExp = new RegExp(/^([A-Z][_])([a-zA-Z]{1,5}[0-9]{1,3})$/);
   resultado = varRegExp.test(variableText);
@@ -61,7 +61,7 @@ btnVerificarVar.addEventListener('click', function() {
 });
 
 //*! Codigo para Expresion regular para contraseñas
-btnVerificarContr.addEventListener('click', function() {
+btnVerificarContr.addEventListener('click', function () {
   variableText = document.querySelector('#contraseña').value;
   const varRegExp = new RegExp(
     /^(?=.*[#%&$])(?=.*\d)(?=.*[A-Z])([#%&$])?([A-Za-z0-9]{7,11})([#%&$])?$/

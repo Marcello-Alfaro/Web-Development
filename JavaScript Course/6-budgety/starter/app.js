@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Saturday, 26th September 2020 5:45:37 pm  * 
+ * Last Modified: Wednesday, 30th September 2020 10:39:38 pm * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  *                    Copyright (c) 2020                    *
@@ -80,32 +80,62 @@
 
 /* Budget controller variable is simply an object containing all the methods defined in there */
 
-var budgetController = (function () {
-  var x = 23;
+/* BUDGET CONTROLLER */
+var budgetController = (function () {})();
 
-  var add = function (a) {
-    return x + a;
+/* UI CONTROLLER */
+var UIController = (function () {
+  var DOMstrings = {
+    inputType: '.add__type',
+    inputDescription: '.add__description',
+    inputValue: '.add__value',
+    inputBtn: '.add__btn',
   };
-
   return {
-    publicTest: function (b) {
-      return add(b);
+    getInput: function () {
+      return {
+        type: document.querySelector(DOMstrings.inputType).value,
+        description: document.querySelector(DOMstrings.inputDescription).value,
+        value: document.querySelector(DOMstrings.inputValue).value,
+      };
+    },
+    getDOMstrings: function () {
+      return DOMstrings;
     },
   };
 })();
 
-var UIController = (function () {
-  // some code
-})();
-
+/* GLOBAL APP CONTROLLER */
+/* Here we tell other controllers what to do */
 var AppController = (function (UICtrl, BudgetCtrl) {
-  var c = BudgetCtrl.publicTest(5);
+  var setupEventListeners = function () {
+    var DOM = UICtrl.getDOMstrings();
+    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
+
+    document.addEventListener('keypress', function (evt) {
+      if (evt.keyCode === 13 || evt.which === 13) {
+        ctrlAddItem();
+      }
+    });
+  };
+
+  var ctrlAddItem = function () {
+    // 1. Get teh field input data
+    var inputValues = UICtrl.getInput();
+    // 2. Add the item to the budget controller
+    // 3. Add the item to the UI
+    // 4. Calculate the budget
+    // 5. Display the budget on the UI
+  };
 
   return {
-    anotherPublic: function () {
-      console.log(c);
+    init: function () {
+      setupEventListeners();
+      console.log('Application has started');
     },
   };
 })(UIController, budgetController);
 
-AppController.anotherPublic();
+AppController.init();
+
+/* Next -> 81 */
