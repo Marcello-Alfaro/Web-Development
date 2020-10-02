@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Wednesday, 30th September 2020 10:39:38 pm * 
+ * Last Modified: Friday, 2nd October 2020 2:24:54 pm       * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  *                    Copyright (c) 2020                    *
@@ -81,7 +81,58 @@
 /* Budget controller variable is simply an object containing all the methods defined in there */
 
 /* BUDGET CONTROLLER */
-var budgetController = (function () {})();
+var budgetController = (function () {
+  // Functions constructors
+  var Expense = function (id, description, value) {
+    this.id = id;
+    this.description = description;
+    this.value = value;
+  };
+
+  var Income = function (id, description, value) {
+    this.id = id;
+    this.description = description;
+    this.value = value;
+  };
+
+  var data = {
+    allItems: {
+      exp: [],
+      inc: [],
+    },
+    total: {
+      exp: 0,
+      inc: 0,
+    },
+  };
+
+  return {
+    addItem: function (type, description, value) {
+      var newItem, id;
+
+      // Create new ID
+      id =
+        data.allItems[type].length !== 0
+          ? data.allItems[type][data.allItems[type].length - 1].id + 1
+          : 1;
+
+      // Create new item based on 'inc' or 'exp' type
+      if (type === 'exp') {
+        newItem = new Expense(id, description, value);
+      } else if (type === 'inc') {
+        newItem = new Income(id, description, value);
+      }
+
+      // Push it into our data structure
+      data.allItems[type].push(newItem);
+
+      return newItem;
+    },
+    testing: function () {
+      console.log(data);
+    },
+  };
+})();
 
 /* UI CONTROLLER */
 var UIController = (function () {
@@ -120,9 +171,11 @@ var AppController = (function (UICtrl, BudgetCtrl) {
   };
 
   var ctrlAddItem = function () {
+    var input, newItem;
     // 1. Get teh field input data
-    var inputValues = UICtrl.getInput();
+    input = UICtrl.getInput();
     // 2. Add the item to the budget controller
+    newItem = BudgetCtrl.addItem(input.type, input.description, input.value);
     // 3. Add the item to the UI
     // 4. Calculate the budget
     // 5. Display the budget on the UI
@@ -137,5 +190,3 @@ var AppController = (function (UICtrl, BudgetCtrl) {
 })(UIController, budgetController);
 
 AppController.init();
-
-/* Next -> 81 */
