@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Saturday, 3rd October 2020 8:50:50 pm     * 
+ * Last Modified: Monday, 5th October 2020 3:34:32 pm       * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  *                    Copyright (c) 2020                    *
@@ -87,6 +87,15 @@ var budgetController = (function () {
     this.id = id;
     this.description = description;
     this.value = value;
+    this.percentage = -1;
+  };
+
+  Expense.prototype.calcPercentage = function (totalIncome) {
+    this.percentage = totalIncome > 0 ? Math.round((this.value / totalIncome) * 100) : -1;
+  };
+
+  Expense.prototype.getPercentage = function () {
+    return this.percentage;
   };
 
   var Income = function (id, description, value) {
@@ -147,9 +156,7 @@ var budgetController = (function () {
       data.budget = data.total.inc - data.total.exp;
       // calculate the percentage of income that we spent
       data.percentage =
-        data.total.inc > 0
-          ? Math.round((data.total.exp / data.total.inc) * 100)
-          : -1;
+        data.total.inc > 0 ? Math.round((data.total.exp / data.total.inc) * 100) : -1;
     },
     getBudget: function () {
       return {
@@ -171,12 +178,24 @@ var budgetController = (function () {
       index = ids.indexOf(id);
       index !== -1 ? data.allItems[type].splice(index, 1) : -1;
     },
+    calculatePercentages: function () {
+      data.allItems.exp.forEach(function (curr) {
+        curr.calcPercentage(data.total.inc);
+      });
+    },
+    getPercentages: function () {
+      var allPerc = data.allItems.exp.map(function (curr) {
+        return curr.getPercentage();
+      });
+
+      return allPerc;
+    },
   };
 })();
 
 /* UI CONTROLLER */
 var UIController = (function () {
-  var DOMstrings = {
+  var DOM = {
     inputType: '.add__type',
     inputDescription: '.add__description',
     inputValue: '.add__value',
@@ -192,20 +211,20 @@ var UIController = (function () {
   return {
     getInput: function () {
       return {
-        type: document.querySelector(DOMstrings.inputType).value,
-        description: document.querySelector(DOMstrings.inputDescription).value,
-        value: Number(document.querySelector(DOMstrings.inputValue).value),
+        type: document.querySelector(DOM.inputType).value,
+        description: document.querySelector(DOM.inputDescription).value,
+        value: Number(document.querySelector(DOM.inputValue).value),
       };
     },
     addlistItem: function (obj, type) {
       var HTML, newHTML, element;
       // Create HTML string with placeholder text
       if (type === 'inc') {
-        element = DOMstrings.incomeContainer;
+        element = DOM.incomeContainer;
         HTML =
           '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">+ %value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       } else if (type === 'exp') {
-        element = DOMstrings.expenseContainer;
+        element = DOM.expenseContainer;
         HTML =
           '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">- %value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       }
@@ -216,14 +235,12 @@ var UIController = (function () {
       // Insert the HTML into the DOM
       document.querySelector(element).insertAdjacentHTML('afterbegin', newHTML);
     },
-    getDOMstrings: function () {
-      return DOMstrings;
+    getDOM: function () {
+      return DOM;
     },
     clearFields: function () {
       var fields, fieldsArr;
-      fields = document.querySelectorAll(
-        DOMstrings.inputDescription + ', ' + DOMstrings.inputValue
-      );
+      fields = document.querySelectorAll(DOM.inputDescription + ', ' + DOM.inputValue);
       fieldsArr = Array.prototype.slice.call(fields);
 
       fieldsArr.forEach(function (current, index, array) {
@@ -232,12 +249,15 @@ var UIController = (function () {
       fieldsArr[0].focus();
     },
     displayBudget: function (obj) {
-      document.querySelector(DOMstrings.budgetLabel).textContent = obj.budget;
-      document.querySelector(DOMstrings.incomeLabel).textContent = obj.totalInc;
-      document.querySelector(DOMstrings.expenseLabel).textContent =
-        obj.totalExp;
-      document.querySelector(DOMstrings.percentageLabel).textContent =
+      document.querySelector(DOM.budgetLabel).textContent = obj.budget;
+      document.querySelector(DOM.incomeLabel).textContent = obj.totalInc;
+      document.querySelector(DOM.expenseLabel).textContent = obj.totalExp;
+      document.querySelector(DOM.percentageLabel).textContent =
         obj.percentage > 0 ? obj.percentage + '%' : '---';
+    },
+    deleteListItem: function (id) {
+      var el = document.getElementById(id);
+      el.parentNode.removeChild(el);
     },
   };
 })();
@@ -246,7 +266,7 @@ var UIController = (function () {
 /* Here we tell other controllers what to do */
 var AppController = (function (UICtrl, BudgetCtrl) {
   var setupEventListeners = function () {
-    var DOM = UICtrl.getDOMstrings();
+    var DOM = UICtrl.getDOM();
     document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
 
     document.addEventListener('keypress', function (evt) {
@@ -255,9 +275,7 @@ var AppController = (function (UICtrl, BudgetCtrl) {
       }
     });
 
-    document
-      .querySelector(DOM.container)
-      .addEventListener('click', ctrlDeleteItem);
+    document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
   };
 
   var updateBudget = function () {
@@ -268,7 +286,15 @@ var AppController = (function (UICtrl, BudgetCtrl) {
     budget = BudgetCtrl.getBudget();
     // 3. Display the budget on the UI
     UICtrl.displayBudget(budget);
-    console.log(budget);
+  };
+
+  var updatePercentages = function () {
+    // 1. Calculate percentages
+    BudgetCtrl.calculatePercentages();
+    // 2. Read percentags from the budget controller
+    var percentages = BudgetCtrl.getPercentages();
+    //3. Update the UI with the new percentanges
+    console.log(percentages);
   };
 
   var ctrlAddItem = function () {
@@ -284,12 +310,13 @@ var AppController = (function (UICtrl, BudgetCtrl) {
     UICtrl.clearFields();
     // 5. Calculate and update budget
     updateBudget();
+    // 6. Calculate and update percentages
+    updatePercentages();
   };
 
   var ctrlDeleteItem = function (evt) {
     var itemID, splitID, type, id;
     itemID = evt.target.parentNode.parentNode.parentNode.parentNode.id;
-    console.log(itemID);
     if (itemID) {
       splitID = itemID.split('-');
       type = splitID[0];
@@ -298,7 +325,11 @@ var AppController = (function (UICtrl, BudgetCtrl) {
       // 1. Delete the item from the data structure
       BudgetCtrl.deleteItem(id, type);
       // 2. Delete the item from the UI
+      UICtrl.deleteListItem(itemID);
       // 3. Update and show the new budget
+      updateBudget();
+      // 4. Calculate and update percentages
+      updatePercentages();
     }
   };
 
