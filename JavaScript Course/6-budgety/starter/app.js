@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Monday, 5th October 2020 3:34:32 pm       * 
+ * Last Modified: Monday, 5th October 2020 10:50:12 pm      * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  *                    Copyright (c) 2020                    *
@@ -207,7 +207,30 @@ var UIController = (function () {
     expenseLabel: '.budget__expense--value',
     percentageLabel: '.budget__expense--percentage',
     container: '.container',
+    expensesPercLabel: '.item__percentage',
   };
+
+  var formatNumber = function (num, type) {
+    var numSplit, int, dec;
+    // 1. + - before the number
+    // 2. Exactly 2 decimal points
+    // 3. comma separating the thousands
+
+    num = Math.abs(num);
+    // This always put exactly 2 decimal numbers on the number on which we can the method
+    num = num.toFixed(2);
+
+    numSplit = num.split('.');
+
+    int = numSplit[0];
+    if (int.length > 3) {
+      int = int.substr(0, int.length - 3) + ',' + int.substr(int.length - 3, int.length);
+    }
+    dec = numSplit[1];
+
+    return (type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec;
+  };
+
   return {
     getInput: function () {
       return {
@@ -222,16 +245,16 @@ var UIController = (function () {
       if (type === 'inc') {
         element = DOM.incomeContainer;
         HTML =
-          '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">+ %value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+          '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       } else if (type === 'exp') {
         element = DOM.expenseContainer;
         HTML =
-          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">- %value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
       }
       // Replace the placeholder text with some actual data
       newHTML = HTML.replace('%id%', obj.id);
       newHTML = newHTML.replace('%description%', obj.description);
-      newHTML = newHTML.replace('%value%', obj.value);
+      newHTML = newHTML.replace('%value%', formatNumber(obj.value, type));
       // Insert the HTML into the DOM
       document.querySelector(element).insertAdjacentHTML('afterbegin', newHTML);
     },
@@ -249,15 +272,36 @@ var UIController = (function () {
       fieldsArr[0].focus();
     },
     displayBudget: function (obj) {
-      document.querySelector(DOM.budgetLabel).textContent = obj.budget;
-      document.querySelector(DOM.incomeLabel).textContent = obj.totalInc;
-      document.querySelector(DOM.expenseLabel).textContent = obj.totalExp;
+      document.querySelector(DOM.budgetLabel).textContent = formatNumber(
+        obj.budget,
+        obj.budget >= 0 ? 'inc' : 'exp'
+      );
+      document.querySelector(DOM.incomeLabel).textContent = formatNumber(obj.totalInc, 'inc');
+      document.querySelector(DOM.expenseLabel).textContent = formatNumber(obj.totalExp, 'exp');
       document.querySelector(DOM.percentageLabel).textContent =
         obj.percentage > 0 ? obj.percentage + '%' : '---';
     },
     deleteListItem: function (id) {
       var el = document.getElementById(id);
       el.parentNode.removeChild(el);
+    },
+    displayPercentages: function (percentages) {
+      var fields;
+      fields = document.querySelectorAll(DOM.expensesPercLabel);
+      fields = Array.prototype.slice.call(fields);
+      fields.reverse().forEach(function (curr, index) {
+        curr.textContent = percentages[index] > 0 ? percentages[index] + '%' : '---';
+      });
+
+      /* var nodeListForEach = function (list, callback) {
+        for (i = 0; i < list.length; i++) {
+          callback(list[i], i);
+        }
+      };
+
+      nodeListForEach(fields, function (curr, index) {
+        curr.textContent = percentages[index] + '%';
+      }); */
     },
   };
 })();
@@ -294,7 +338,7 @@ var AppController = (function (UICtrl, BudgetCtrl) {
     // 2. Read percentags from the budget controller
     var percentages = BudgetCtrl.getPercentages();
     //3. Update the UI with the new percentanges
-    console.log(percentages);
+    UICtrl.displayPercentages(percentages);
   };
 
   var ctrlAddItem = function () {
@@ -349,4 +393,4 @@ var AppController = (function (UICtrl, BudgetCtrl) {
 
 AppController.init();
 
-// next -> 92
+// next -> 98
