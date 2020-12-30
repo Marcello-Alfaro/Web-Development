@@ -4,7 +4,7 @@
  * Author: Marcello Alfaro                                  *
  * Email: marcello.alfaro1@gmail.com                        *
  *                --------------------------                *
- * Last Modified: Monday, 5th October 2020 10:50:12 pm      * 
+ * Last Modified: Tuesday, 6th October 2020 8:10:53 am      * 
  * Modified By: Marcello Alfaro                             * 
  *                --------------------------                *
  *                    Copyright (c) 2020                    *
@@ -208,6 +208,7 @@ var UIController = (function () {
     percentageLabel: '.budget__expense--percentage',
     container: '.container',
     expensesPercLabel: '.item__percentage',
+    dateLabel: '.budget__title--month',
   };
 
   var formatNumber = function (num, type) {
@@ -303,6 +304,38 @@ var UIController = (function () {
         curr.textContent = percentages[index] + '%';
       }); */
     },
+    displayDate: function () {
+      var now, month, months, year;
+      now = new Date();
+      months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+      month = months[now.getMonth()];
+      year = now.getFullYear();
+      document.querySelector(DOM.dateLabel).textContent = month + ' ' + year;
+    },
+    changeType: function () {
+      var fields;
+      fields = document.querySelectorAll(
+        DOM.inputType + ',' + DOM.inputDescription + ',' + DOM.inputValue
+      );
+
+      fields.forEach(function (curr) {
+        curr.classList.toggle('red-focus');
+      });
+      document.querySelector(DOM.inputBtn).classList.toggle('red');
+    },
   };
 })();
 
@@ -320,6 +353,8 @@ var AppController = (function (UICtrl, BudgetCtrl) {
     });
 
     document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+
+    document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changeType);
   };
 
   var updateBudget = function () {
@@ -380,6 +415,7 @@ var AppController = (function (UICtrl, BudgetCtrl) {
   return {
     init: function () {
       setupEventListeners();
+      UICtrl.displayDate();
       UICtrl.displayBudget({
         budget: 0,
         totalInc: 0,
